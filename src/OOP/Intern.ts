@@ -1,5 +1,6 @@
 import { Employer } from './Employer';
 export class Intern extends Employer {
+  protected typeEmployer = 'intern';
   constructor() {
     super()
   }

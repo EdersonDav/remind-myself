@@ -1,10 +1,10 @@
 import { factory } from '../factory'
 describe('Polymorphism and Inheritance', () => {
+  const employer = factory('');
   it('should create class employer whit simple salary - Encapsulation', () => {
     const employerBaseSalary = 1000;
     const employerdiscount = 10;
 
-    const employer = factory('');
     employer.setBaseSalary(employerBaseSalary);
     employer.setDiscount(employerdiscount);
 
@@ -17,7 +17,6 @@ describe('Polymorphism and Inheritance', () => {
     const employerdiscount = 10;
     const employerPlusValuePecentageInSalary = 20;
 
-    const employer = factory('');
     employer.setPlusValuePecentageInSalary(employerPlusValuePecentageInSalary);
     employer.setBaseSalary(employerBaseSalary);
     employer.setDiscount(employerdiscount);
@@ -34,11 +33,15 @@ describe('Polymorphism and Inheritance', () => {
       (employerBaseSalary - (employerBaseSalary * (employerdiscount / 100)))
       + employerBaseSalary * (employerPlusValuePecentageInSalary / 100);
 
-    const employer = factory('');
     employer.setPlusValuePecentageInSalary(employerPlusValuePecentageInSalary);
     employer.setBaseSalary(employerBaseSalary);
     employer.setDiscount(employerdiscount);
 
     expect(employer.getemployerMonthlyPaymentAmount()).toBe(monthValue)
+  });
+
+  it('should verify typeof class - Factory', () => {
+
+    expect(employer.getTypeEmployer()).toBe('default')
   });
 })

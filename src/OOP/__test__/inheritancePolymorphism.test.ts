@@ -5,9 +5,9 @@ describe('Polymorphism and Inheritance', () => {
   const managerSalary = 5000;
   const managerDiscounty = 10;
   const managerPlusValuePecentageInSalary = 10;
+  const intern = factory('intern');
+  const manager = factory('manager');
   it('should create class intern an manager - Inheritance', () => {
-    const intern = factory('intern');
-    const manager = factory('manager');
 
     intern.setBaseSalary(internSalary);
     manager.setBaseSalary(managerSalary);
@@ -18,9 +18,6 @@ describe('Polymorphism and Inheritance', () => {
   });
 
   it('should create class intern an manager whit plus salary, intern not discount and manager plus base salary - Polymorphism', () => {
-    const intern = factory('intern');
-    const manager = factory('manager');
-
     intern.setBaseSalary(internSalary);
     intern.setDiscount(1000);
     manager.setBaseSalary(managerSalary);
@@ -31,5 +28,10 @@ describe('Polymorphism and Inheritance', () => {
     expect(manager.getBaseSalary()).toBe(managerSalary + 2000)
     expect(manager.getemployerMonthlyPaymentAmount()).toBe(
       ((managerSalary + 2000) - ((managerSalary + 2000) * (0.1 + 0.05))) + (managerSalary + 2000) * 0.1)
+  });
+
+  it('should verify typeof class - Factory', () => {
+    expect(intern.getTypeEmployer()).toBe('intern')
+    expect(manager.getTypeEmployer()).toBe('manager')
   });
 })

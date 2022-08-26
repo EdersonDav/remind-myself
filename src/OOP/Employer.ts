@@ -2,6 +2,11 @@ export class Employer {
   protected baseSalary!: number;
   protected discount = 0;
   protected plusValuePecentageInSalary = 0;
+  protected typeEmployer = 'default';
+
+  public getTypeEmployer(): string {
+    return this.typeEmployer
+  }
 
   public setPlusValuePecentageInSalary(value: number) {
     this.plusValuePecentageInSalary = value > 0 ? value / 100 : 0;
