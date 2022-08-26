@@ -1,4 +1,4 @@
-export class Company {
+export class Employer {
   protected baseSalary!: number;
   protected discount = 0;
   protected plusValuePecentageInSalary = 0;
@@ -30,7 +30,7 @@ export class Company {
     return this.discount > 0 ? this.discount * 100 : this.discount
   }
 
-  public getCompanyMonthlyPaymentAmount(): number {
+  public getemployerMonthlyPaymentAmount(): number {
     return this.calcSalary()
   }
 

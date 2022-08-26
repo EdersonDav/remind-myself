@@ -1,14 +1,14 @@
-import { Company } from './Company';
-export class Manager extends Company {
-  private managerPlus = 0.2;
+import { Employer } from './Employer';
+export class Manager extends Employer {
+  private managerPlusBaseSalary = 2000;
   private managerDiscount = 0.05;
 
   constructor() {
     super()
   }
 
-  public setPlusValuePecentageInSalary(value: number) {
-    this.plusValuePecentageInSalary = value > 0 ? (value / 100) + this.managerPlus : this.managerPlus;
+  public setBaseSalary(value: number) {
+    this.baseSalary = value + this.managerPlusBaseSalary;
   }
 
   public setDiscount(value: number) {

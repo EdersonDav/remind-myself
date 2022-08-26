@@ -1,14 +1,14 @@
-import { Company } from './Company';
-export class Intern extends Company {
+import { Employer } from './Employer';
+export class Intern extends Employer {
   constructor() {
     super()
   }
 
-  public setPlusValuePecentageInSalary() {
+  public setPlusValuePecentageInSalary(value: number) {
     this.plusValuePecentageInSalary = 0;
   }
 
-  public setDiscount() {
+  public setDiscount(value: number) {
     this.discount = 0;
   }
 }
