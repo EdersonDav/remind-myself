@@ -15,7 +15,7 @@
 - I - Interface Segregation Principle
 - D - Dependency Inversion Principle
 
-# Data Structures 
+## Data Structures 
 
 - L.I.F.O - Last In First Out
 - F.I.F.O - First In First Out 
