@@ -14,3 +14,7 @@
 - L - Liskov Substitution Principle
 - I - Interface Segregation Principle
 - D - Dependency Inversion Principle
+
+# Data Structures 
+
+- L.I.F.O - Last In First Out
