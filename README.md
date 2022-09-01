@@ -18,3 +18,4 @@
 # Data Structures 
 
 - L.I.F.O - Last In First Out
+- F.I.F.O - First In First Out 
