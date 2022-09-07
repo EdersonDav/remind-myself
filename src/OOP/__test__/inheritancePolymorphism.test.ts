@@ -12,7 +12,9 @@ describe('Polymorphism and Inheritance', () => {
     intern.setBaseSalary(internSalary);
     manager.setBaseSalary(managerSalary);
     manager.setPlusValuePecentageInSalary(managerPlusValuePecentageInSalary);
+    intern.setPlusValuePecentageInSalary(500);
 
+    expect(intern.getPlusValuePecentageInSalary()).toBe(0)
     expect(intern.getBaseSalary()).toBe(internSalary)
     expect(manager.getPlusValuePecentageInSalary()).toBe(managerPlusValuePecentageInSalary)
   });

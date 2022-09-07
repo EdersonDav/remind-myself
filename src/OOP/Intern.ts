@@ -6,7 +6,7 @@ export class Intern extends Employer {
   }
 
   public setPlusValuePecentageInSalary(value: number) {
-    this.plusValuePecentageInSalary = 0;
+    this.plusValuePecentageInSalary = value - value;
   }
 
   public setDiscount(value: number) {
