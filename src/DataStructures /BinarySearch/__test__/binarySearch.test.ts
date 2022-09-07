@@ -9,8 +9,6 @@ describe('Test Binary Search', () => {
 
     expect(list[binarySearch.index]).toEqual(list[list.length - 1]);
 
-    console.log(binarySearch.count)
-    console.log(list.length)
     expect(binarySearch.count < list.length).toBe(true)
   });
 
