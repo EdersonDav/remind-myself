@@ -7,6 +7,7 @@ describe('Polymorphism and Inheritance', () => {
   const managerPlusValuePecentageInSalary = 10;
   const intern = factory('intern');
   const manager = factory('manager');
+  
   it('should create class intern an manager - Inheritance', () => {
 
     intern.setBaseSalary(internSalary);
