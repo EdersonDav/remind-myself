@@ -2,7 +2,7 @@ import { Card } from '../Card';
 import { CreditCard } from '../CreditCard';
 import { Money } from '../Money';
 
-describe('Liskov Substitution Principle Test', () => {
+describe('Liskov Substitution Principle', () => {
   it('should substitution class Card', () => {
     const creditCard: Card = new CreditCard();
 

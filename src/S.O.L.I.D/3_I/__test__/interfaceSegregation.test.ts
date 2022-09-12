@@ -6,7 +6,7 @@ import { IPlayNoSegregation } from '../IPlayNoSegregation';
 import { SoccerNoSegregation } from '../SoccerNoSegregation';
 import { BasketballNoSegregation } from '../BasketballNoSegregation';
 
-describe('Interface Segregation Test', ()=>{
+describe('Interface Segregation Principle', ()=>{
   it('should create play soccer and play basketball, implements only interface IPlayNoSegregation', () =>{
     const playSoccer:IPlayNoSegregation = new SoccerNoSegregation();
 

@@ -2,7 +2,7 @@ import { CreditCard } from '../CreditCard';
 
 import { DebitCard } from '../DebitCard';
 
-describe('Test Open Close Principle', () => {
+describe('Open Close Principle', () => {
   const peaple = {
     name: 'John Doe',
     documentNumber: 123456789456,

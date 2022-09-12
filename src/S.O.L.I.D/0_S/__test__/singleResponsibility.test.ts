@@ -3,7 +3,7 @@ import { createProduct } from '../CreateProduct';
 import { saveProduct } from '../SaveProduct';
 import { deleteProduct } from '../DeleteProduct';
 
-describe('Single Responsibility test with Singleton pattern', () => {
+describe('Single Responsibility Principle', () => {
   const expectedProducts = [{ name: 'apple' }, { name: 'grape' }, { name: 'coconut' }];
   const expectedProductsBeforeDelete = [{ name: 'apple' }, { name: 'grape' }];
 
