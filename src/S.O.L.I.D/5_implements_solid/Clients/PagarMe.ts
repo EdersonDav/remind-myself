@@ -1,6 +1,8 @@
 import { IPayment } from '../IPayment';
 
 export class PagarMe implements IPayment{
+  clientName = 'Pagar Me';
+
   paymentCreditCard(value: number): boolean {
     throw new Error('Method not implemented.');
   }
