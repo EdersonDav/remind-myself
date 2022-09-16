@@ -2,14 +2,20 @@ import { IPayment } from '../IPayment';
 
 export class PagSeguro implements IPayment{
   clientName = 'Pague Seguro';
-  paymentCreditCard(value: number): boolean {
-    throw new Error('Method not implemented.');
+  paymentCreditCard(value: number): string {
+    return this.paymentMessage(value, 'credit');
   }
-  paymentDebitCard(value: number): boolean {
-    throw new Error('Method not implemented.');
+  
+  paymentDebitCard(value: number): string {
+    return this.paymentMessage(value, 'debit');
   }
+
   generateTicketCode(value: number): string {
-    throw new Error('Method not implemented.');
+    return `Code: ${Math.random()}, value ${value}`;
+  }
+
+  paymentMessage(value: number, method:string): string {
+    return `${this.clientName} - payment with ${method} card value ${value}`
   }
   
 }
