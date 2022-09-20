@@ -5,6 +5,7 @@
 - L.I.F.O - Last In First Out
 - F.I.F.O - First In First Out 
 - Binary Search
+- Binary Tree
 
 ## O.O.P - Object Oriented Programming
 
