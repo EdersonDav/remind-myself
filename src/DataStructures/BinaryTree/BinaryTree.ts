@@ -40,16 +40,15 @@ export class BinaryTree{
   }
 
   private buildNode(value: number):void{
-    console.log(value);
     if(this.tree.root > value){
       if(this.tree.left){
-        this.tree.left = this.insertLeft(this.tree.left, value)
+        this.tree.left = this.insert(this.tree.left, value)
       }else{
         this.tree.left = this.buildData(value)
       }
     }else{
       if(this.tree.right){
-        this.tree.right = this.insertRight(this.tree.left, value)
+        this.tree.right = this.insert(this.tree.right, value)
       }else{
         this.tree.right = this.buildData(value)
       }
@@ -57,27 +56,23 @@ export class BinaryTree{
     
   }
 
-  private insertLeft(tree: INode | null, value: number){
-    if(!tree){
-      tree = this.buildData(value);
+  private insert(tree: INode | null, value: number):INode{
+    if(tree){
+      if(tree.data < value) {
+        tree.right = this.insert(tree.right, value)
+        return tree
+      }
+      
+      if( tree.data > value) {
+        tree.left = this.insert(tree.left, value)
+        return tree
+      }
     }
-    tree.data < value && this.insertLeft(tree.left, value)
-    tree.data > value && this.insertRight(tree.right, value)
+    tree = this.buildData(value);
 
-    tree.left = this.buildData(value);
     return tree;
   }
 
-  private insertRight(tree: INode | null, value: number){
-    if(!tree){
-      tree = this.buildData(value);
-    }
-    tree.data < value && this.insertRight(tree.right, value)
-    tree.data > value && this.insertLeft(tree.left, value)
-
-    tree.right = this.buildData(value);
-    return tree;
-  }
 
   private buildData(value: number):INode{
     return{
