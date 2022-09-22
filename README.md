@@ -6,7 +6,7 @@
 - F.I.F.O - First In First Out 
 - Binary Search
 - Binary Tree
-  <img src="/assets/tree.pnb">
+  <img src="/assets/tree.png">
   * Build Tree
   * In order list
 
