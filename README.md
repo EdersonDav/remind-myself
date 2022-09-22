@@ -6,6 +6,8 @@
 - F.I.F.O - First In First Out 
 - Binary Search
 - Binary Tree
+  * Build Tree
+  * In order list
 
 ## O.O.P - Object Oriented Programming
 

@@ -1,17 +1,12 @@
 interface ITree{
-  root: number;
-  left: INode | null;
-  right: INode | null;
-}
-
-interface INode{
-  data:number;
-  left: INode | null;
-  right: INode | null;
+  data: number;
+  left: ITree | null;
+  right: ITree | null;
 }
 
 export class BinaryTree{
   list!: number[];
+  listInOrder: number[] = [];
   tree!: ITree;
 
   constructor(list:number[]){
@@ -20,7 +15,7 @@ export class BinaryTree{
 
   public buildTree(){
     this.list.forEach((data: number)=>{
-      if(!this.tree?.root){
+      if(!this.tree?.data){
         this.buildRoot(data)
       }else{
         this.buildNode(data)
@@ -32,7 +27,7 @@ export class BinaryTree{
 
   private buildRoot(value: number):void{
     this.tree = {
-      root: value,
+      data: value,
       left: null,
       right: null
     }
@@ -40,7 +35,7 @@ export class BinaryTree{
   }
 
   private buildNode(value: number):void{
-    if(this.tree.root > value){
+    if(this.tree.data > value){
       if(this.tree.left){
         this.tree.left = this.insert(this.tree.left, value)
       }else{
@@ -56,7 +51,7 @@ export class BinaryTree{
     
   }
 
-  private insert(tree: INode | null, value: number):INode{
+  private insert(tree: ITree | null, value: number):ITree{
     if(tree){
       if(tree.data < value) {
         tree.right = this.insert(tree.right, value)
@@ -74,11 +69,23 @@ export class BinaryTree{
   }
 
 
-  private buildData(value: number):INode{
+  private buildData(value: number):ITree{
     return{
       data: value,
       left: null,
       right: null
     }
+  }
+
+  public getListInOrder(){
+    this.inOrderTree(this.tree);
+
+    return this.listInOrder
+  }
+
+  private inOrderTree(tree: ITree){
+    tree.left && this.inOrderTree(tree.left);
+    this.listInOrder.push(tree.data)
+    tree.right && this.inOrderTree(tree.right);
   }
 }
