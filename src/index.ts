@@ -7,6 +7,6 @@ console.log(test.getListInOrder())
 
 
 let json = JSON.stringify(test.tree);
-fs.writeFile('tree.json', json, (err) =>{
+fs.writeFile('assets/tree.json', json, (err) =>{
   console.log(err)
 });
