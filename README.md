@@ -8,7 +8,7 @@
 - Binary Tree
   <img src="/assets/tree.png">
   * Build Tree
-  * In order list
+  * Get List In Order
 
 ## O.O.P - Object Oriented Programming
 
