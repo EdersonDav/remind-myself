@@ -6,7 +6,7 @@ interface ITree{
 
 export class BinaryTree{
   list!: number[];
-  listInOrder: number[] = [];
+  listOrder: number[] = [];
   tree!: ITree;
 
   constructor(list:number[]){
@@ -79,13 +79,44 @@ export class BinaryTree{
 
   public getListInOrder(){
     this.inOrderTree(this.tree);
+    const list = this.listOrder
+    this.clearListOrder();
+    return list
+  }
 
-    return this.listInOrder
+  public getListPreOrder(){
+    this.preOrderTree(this.tree);
+    const list = this.listOrder
+    this.clearListOrder();
+    return list
+  }
+
+  public getListPosOrder(){
+    this.posOrderTree(this.tree);
+    const list = this.listOrder
+    this.clearListOrder();
+    return list
   }
 
   private inOrderTree(tree: ITree){
     tree.left && this.inOrderTree(tree.left);
-    this.listInOrder.push(tree.data)
+    this.listOrder.push(tree.data)
     tree.right && this.inOrderTree(tree.right);
+  }
+
+  private posOrderTree(tree: ITree){
+    tree.left && this.inOrderTree(tree.left);
+    tree.right && this.inOrderTree(tree.right);
+    this.listOrder.push(tree.data)
+  }
+
+  private preOrderTree(tree: ITree){
+    this.listOrder.push(tree.data)
+    tree.left && this.inOrderTree(tree.left);
+    tree.right && this.inOrderTree(tree.right);
+  }
+
+  private clearListOrder(){
+    this.listOrder = []
   }
 }
