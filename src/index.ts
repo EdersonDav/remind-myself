@@ -1,14 +1,11 @@
 import fs from 'fs'
 import { BinaryTree } from './DataStructures/BinaryTree/BinaryTree';
 
-const test = new BinaryTree([34,84,15,0,2,99,79,9,88,89,18,31,39,100,101])
-test.buildTree()
-console.log(test.getListInOrder())
-console.log(test.getListPosOrder())
-console.log(test.getListPreOrder())
+const binaryTree = new BinaryTree([34,84,150,120,2,98,91,9,8,89,88,3,9,12,105])
+binaryTree.buildTree();
 
 
-let json = JSON.stringify(test.tree);
+let json = JSON.stringify(binaryTree.tree);
 fs.writeFile('assets/tree.json', json, (err) =>{
   console.log(err)
 });
