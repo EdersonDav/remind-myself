@@ -1,14 +1,17 @@
 import { BinaryTree } from '../BinaryTree';
 describe("Binary Tree", ()=>{
-  const arry = [34,84,150,120,2,98,91,9,8,89,88,3,9,12,105]
+  const arry = Array(9999).fill((value: number)=>value).map(() => 500 * Math.random());
+
   it("should build a binary and verify order list result", ()=>{
     const binaryTree = new BinaryTree(arry);
     binaryTree.buildTree();
-
+    
+    console.time('sort')
     const sort = arry.sort((a,b)=> a - b);
-    console.log(sort)
+    console.timeEnd('sort')
+    console.time('binarySort')
     const binarySort = binaryTree.getListInOrder()
-    console.log(binarySort)
-    // expect().toEqual(sort);
+    console.timeEnd('binarySort')
+    expect(binarySort).toEqual(sort);
   })
 })
