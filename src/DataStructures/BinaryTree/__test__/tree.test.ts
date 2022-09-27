@@ -1,8 +1,7 @@
 import { BinaryTree } from '../BinaryTree';
 describe("Binary Tree", ()=>{
-  const arry = Array(9999).fill((value: number)=>value).map(() => 500 * Math.random());
-
   it("should build a binary and verify order list result", ()=>{
+    const arry = Array(9999).fill((value: number)=>value).map(() => 500 * Math.random());
     const binaryTree = new BinaryTree(arry);
     binaryTree.buildTree();
     
@@ -13,5 +12,17 @@ describe("Binary Tree", ()=>{
     const binarySort = binaryTree.getListInOrder()
     console.timeEnd('binarySort')
     expect(binarySort).toEqual(sort);
+  })
+
+  it("should build a binary and insert order number in tree", ()=>{
+    const arry = [34,84,150,120,2,98,91,9,8,89,88,3,12,105]
+    const binaryTree = new BinaryTree(arry);
+    binaryTree.buildTree();
+    binaryTree.insert(0);
+    binaryTree.insert(1000);
+    
+    const binarySort = binaryTree.getListInOrder();
+    
+    expect(binarySort[0]).toEqual(0);
   })
 })

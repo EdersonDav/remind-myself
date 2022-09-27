@@ -25,6 +25,10 @@ export class BinaryTree{
     
   }
 
+  public insert(value: number):void{
+    this.buildNode(value);
+  }
+
   private buildRoot(value: number):void{
     this.tree = {
       data: value,
@@ -37,13 +41,13 @@ export class BinaryTree{
   private buildNode(value: number):void{
     if(this.tree.data > value){
       if(this.tree.left){
-        this.tree.left = this.insert(this.tree.left, value)
+        this.tree.left = this.insertInTree(this.tree.left, value)
       }else{
         this.tree.left = this.buildData(value)
       }
     }else{
       if(this.tree.right){
-        this.tree.right = this.insert(this.tree.right, value)
+        this.tree.right = this.insertInTree(this.tree.right, value)
       }else{
         this.tree.right = this.buildData(value)
       }
@@ -51,15 +55,15 @@ export class BinaryTree{
     
   }
 
-  private insert(tree: ITree | null, value: number):ITree{
+  private insertInTree(tree: ITree | null, value: number):ITree{
     if(tree){
       if(tree.data < value) {
-        tree.right = this.insert(tree.right, value)
+        tree.right = this.insertInTree(tree.right, value)
         return tree
       }
       
       if( tree.data > value) {
-        tree.left = this.insert(tree.left, value)
+        tree.left = this.insertInTree(tree.left, value)
         return tree
       }
     }
