@@ -123,4 +123,12 @@ export class BinaryTree{
   private clearListOrder(){
     this.listOrder = []
   }
+
+  public search(value: number){
+
+  }
+
+  public delete(value: number){
+    
+  }
 }

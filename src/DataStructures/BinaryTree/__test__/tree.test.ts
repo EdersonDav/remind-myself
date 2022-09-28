@@ -22,7 +22,10 @@ describe("Binary Tree", ()=>{
     binaryTree.insert(1000);
     
     const binarySort = binaryTree.getListInOrder();
+
+    const {length, 0: first, [length - 1]: last} = binarySort
     
-    expect(binarySort[0]).toEqual(0);
+    expect(first).toEqual(0);
+    expect(last).toEqual(1000);
   })
 })
