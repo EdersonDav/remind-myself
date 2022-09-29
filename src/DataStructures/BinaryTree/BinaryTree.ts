@@ -125,7 +125,24 @@ export class BinaryTree{
   }
 
   public search(value: number){
+    const find = this.searchInTree(this.tree, value);
+    return find.data
+  }
 
+  private searchInTree(tree: ITree | null, value: number):ITree{
+    if( tree?.data !== value && !tree?.left && !tree?.right){
+      return this.buildData(-1);
+    }
+    
+    if(tree.data < value) {
+      return this.searchInTree(tree.right, value)
+    }
+    
+    if( tree.data > value) {
+      return this.searchInTree(tree.left, value)
+    }
+
+    return tree
   }
 
   public delete(value: number){

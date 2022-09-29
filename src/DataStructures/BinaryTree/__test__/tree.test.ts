@@ -25,7 +25,16 @@ describe("Binary Tree", ()=>{
 
     const {length, 0: first, [length - 1]: last} = binarySort
     
-    expect(first).toEqual(0);
-    expect(last).toEqual(1000);
+    expect(first).toBe(0);
+    expect(last).toBe(1000);
+  })
+
+  it("should search value in tree", ()=>{
+    const arry = [34,84,150,120,2,98,91,9,8,89,88,3,12,105]
+    const binaryTree = new BinaryTree(arry);
+    binaryTree.buildTree();
+
+    const valueSearch = binaryTree.search(9) 
+    expect(valueSearch).toBe(9);
   })
 })
