@@ -1,28 +1,18 @@
-import { products } from '../Products';
-import { createProduct } from '../CreateProduct';
-import { saveProduct } from '../SaveProduct';
-import { deleteProduct } from '../DeleteProduct';
+import { Products } from '../Products';
+import { INotification } from '../INotification';
+import { MobilePushNotification } from '../MobilePushNotification';
 
 describe('Single Responsibility Principle', () => {
   const expectedProducts = [{ name: 'apple' }, { name: 'grape' }, { name: 'coconut' }];
-  const expectedProductsBeforeDelete = [{ name: 'apple' }, { name: 'grape' }];
 
-  it('should create and save products', () => {
-    createProduct.setProductName('apple');
-    saveProduct.saveProduct(createProduct.getProductName());
-    createProduct.setProductName('grape');
-    saveProduct.saveProduct(createProduct.getProductName());
-    createProduct.setProductName('coconut');
-    saveProduct.saveProduct(createProduct.getProductName());
+  it('should create new product, and notification mobile users', () => {
+    const notification : INotification = new MobilePushNotification();
+    const product = new Products(notification);
+    const newProduct = 'coconut'
+    product.createNewProduct(newProduct);
 
-    products.setList(saveProduct.getProducts());
-    expect(products.getList()).toEqual(expectedProducts);
+    expect(product.getAll()).toEqual(expectedProducts);
+    expect(product.sendNotification()).toBe('moblie users notified about new product');
   })
-
-  it('should delete and save new list products', () => {
-    deleteProduct.deleteProduct('coconut', products.getList())
-    saveProduct.saveProducts(deleteProduct.getList());
-    products.setList(saveProduct.getProducts());
-    expect(products.getList()).toEqual(expectedProductsBeforeDelete);
-  })
+  
 })

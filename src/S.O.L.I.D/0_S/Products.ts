@@ -1,13 +1,22 @@
-export class Products {
-  private list!: { name: string; }[];
+import {INotification} from './INotification';
 
-  public setList(list: { name: string; }[]) {
-    this.list = list;
+export class Products {
+  private list = [{ name: 'apple' }, { name: 'grape' }];
+  private notification!:INotification;
+
+  constructor(notification: INotification){
+    this.notification = notification;
   }
 
-  public getList() {
+  public createNewProduct(product:string) {
+    this.list.push({name: product});
+  }
+
+  public getAll() {
     return this.list;
   }
-}
 
-export const products = new Products()
+  public sendNotification() {
+    return this.notification.sendNotification();
+  }
+}

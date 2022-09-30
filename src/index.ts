@@ -6,5 +6,6 @@ binaryTree.buildTree();
 
 let json = JSON.stringify(binaryTree.tree);
 fs.writeFile('assets/tree.json', json, (err) =>{
+  if(err)
   console.log(err)
 });
