@@ -146,6 +146,11 @@ export class BinaryTree{
   }
 
   public delete(value: number){
-    
+    const findValue = this.search(value);
+    if(findValue){
+      //TODO
+    }
+
+    return findValue;
   }
 }
