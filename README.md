@@ -6,8 +6,8 @@
 - F.I.F.O - First In First Out 
 - Binary Search
 - Binary Tree
-  <img src="/assets/tree.png">
   * Build Tree
+  <img src="/assets/tree.png">
   * Get List In Order
 
 ## O.O.P - Object Oriented Programming
